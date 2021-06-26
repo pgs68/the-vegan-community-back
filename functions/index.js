@@ -11,6 +11,9 @@ admin.initializeApp({
 
 app.use(cors({ origin: true }))
 
+
+
+
 const db = admin.firestore();
 
 app.post("/api/productos", async (req, res) => {
@@ -25,10 +28,10 @@ app.post("/api/productos", async (req, res) => {
             foto_ingredientes: '',
             foto_principal: '',
             fecha_publicacion: Date.now(),
-            valoracion: 0,
-            veces_visto: 0
+            valoracion: 1,
+            veces_visto: 1
         })
-        return res.status(204).json();
+        return res.status(205).json();
     } catch (error) {
         return res.status(500).send(error);
     }
